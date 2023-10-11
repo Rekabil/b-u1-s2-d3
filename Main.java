@@ -31,19 +31,9 @@ public class Main {
             products.add(boysSupplier.get());
         }
 
+       List<Product> books = products.stream().filter(product -> product.getCatagory().equals("Books") && product.getPrice() > 100).toList();
 
-        List<Product> expensiveBooks = new ArrayList<>();
-
-        for (Product value : products) {
-            if (Objects.equals(value.getCatagory(), "Books")) {
-                if (value.getPrice() > 100) {
-                    expensiveBooks.add(value);
-                }
-            }
-
-        }
-        expensiveBooks.forEach(product -> System.out.println(product.toString()));
-
+        books.forEach(product -> System.out.println(product.toString()));
 
     }
 }
